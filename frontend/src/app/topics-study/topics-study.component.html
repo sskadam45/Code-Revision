@@ -1,0 +1,37 @@
+<div class="row">
+
+  <div class="col-9">
+    <blockquote><div class="tab-content box" style="text-align: center;" id="nav-tabContent">
+      <!-- <span class="content-heading">Selected Content details</span> -->
+      <pdf-viewer
+      [src]="selectedFile"
+      [rotation]="0"
+      [original-size]="false"
+      [show-all]="true"
+      [fit-to-page]="false"
+      [zoom]="1"
+      [zoom-scale]="'page-width'"
+      [stick-to-page]="false"
+      [render-text]="true"
+      [external-link-target]="'blank'"
+      [autoresize]="true"
+      [show-borders]="false"
+      style="width: 100%; height: 600px;"
+    ></pdf-viewer>
+
+    </div></blockquote>
+  </div>
+  <div class="col-3">
+    <div class="list-group vl" id="list-tab" role="tablist">
+      <span class="list-heading">List of Selected Topics</span>
+      <ul>
+        <div class="topics-list">
+        <div *ngFor="let topic of topics">
+
+          <li class="list-group-item list-group-item-action topic-item" (click)="selectedTopic(topic)" [ngClass]="{'active': topic.status === 'active'}" aria-controls="home">{{ topic.name }}</li>
+        </div>
+      </div>
+      </ul>
+    </div>
+  </div>
+</div>

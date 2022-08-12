@@ -1,0 +1,123 @@
+<section class="h-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+             <!-- <img
+                src="assets/images/course.png"
+                alt="Sample photo"
+                class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+              />-->
+              <div>
+                <div class="card-container">
+                  <img
+                    class="round"
+                    src="{{currentUser.imageUrl}}"
+                    alt="user"
+                    width="160"
+                    height="160"
+                  />
+                  <h3>{{ currentUser.username }}</h3>
+                  <h6>India</h6>
+                  <p>
+                    Senior Software Engineer <br />
+                    Fullstack developer
+                  </p>
+                  <div class="skills">
+                    <h6>Location</h6>
+                    <label>APAC, India, Pune, Sai Radhe Complex, Sangamvadi</label>
+                  </div>
+                  <div class="skills">
+                    <h6>Country</h6>
+                    <label>India</label>
+                  </div>
+                  <div class="skills">
+                    <h6>Resourse Manager</h6>
+                    <label>Saikumar Palla</label>
+                  </div>
+                  <div class="skills">
+                    <h6>Language</h6>
+                    <label>English</label>
+                  </div>
+                  <div class="skills">
+                    <h6>Note</h6>
+                    <label>There may be delay in creating classroom.</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <!--<h3 class="mb-5 text-uppercase"> classroom registration form </h3>-->
+                <div class="row">
+                  <div class="mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1m"> Classroom Name </label>
+                      <input type="text" id="form3Example1m" class="form-control form-control-lg" [(ngModel)]= "classRoomDTO.title"/>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1n"> Classroom Description </label>
+                      <textarea class="form-control" id="form3Example1n" rows="5" id="comment" [(ngModel)]= "classRoomDTO.description"></textarea>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1m1"> Category </label>
+                      <select class="form-select" aria-label="Default select example" [(ngModel)]="classRoomDTO.category">
+                        <option selected>Select menu</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="AWS">AWS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Angular">Angular</option>
+                        <option value="React">React</option>
+                        <option value="SpringBoot">SpringBoot</option>
+                        <option value="Azure">Azure</option>
+                        <option value="Microservices">Microservices</option>
+                        <option value="SQLServer">SQLServer</option>
+                        <option value="MongoDB">MongoDB</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1m1"> Image Url </label>
+                      <input type="text" id="form3Example1m1" class="form-control form-control-lg" [(ngModel)]= "classRoomDTO.imageUrl"/>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1m2"> Tags </label>
+                      <input type="text" id="form3Example1m2" class="form-control form-control-lg" [(ngModel)]= "classRoomDTO.tags"/>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="example"> Start Date </label>
+                      <input placeholder="Select date" type="text" id="example" class="form-control" placeholder="YYYY-MM-DD" [(ngModel)]= "classRoomDTO.startDate">
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="form3Example8"> End Date </label>
+                  <input type="text" id="form3Example8" class="form-control" placeholder="YYYY-MM-DD" [(ngModel)]= "classRoomDTO.endDate"/>
+                </div>
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="button" class="btn btn-light btn-lg" href="#" routerLink="../feed"> Cancel </button>
+                  <button href="#" routerLink="../feed" class="btn btn-primary" (click)="onSubmitClick(classRoomDTO)">Create</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

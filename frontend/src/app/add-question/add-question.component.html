@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Add New Question</h1>
+<div mat-dialog-content class="category-form">
+  <p>Enter Question Details</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Title:</mat-label>
+    <input matInput [(ngModel)]=" question.name">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Question Url Link:</mat-label>
+    <input matInput [(ngModel)]=" question.urlLink">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Difficulty Leval</mat-label>
+    <mat-select [(ngModel)]="question.dificultyLevel" name="food">
+      <mat-option *ngFor="let level of dificultyLevel" [value]="level">
+        {{level}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field  appearance="fill"><mat-label>Pattern:</mat-label>
+    <input matInput [(ngModel)]="question.patterns"></mat-form-field>
+  <mat-form-field  appearance="fill">
+    <mat-label>Tags:</mat-label>
+    <input matInput [(ngModel)]="question.tags">
+  </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="question" cdkFocusInitial (click)="saveQruestion()">Save</button>
+</div>

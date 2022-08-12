@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Create new Category</h1>
+<div mat-dialog-content class="category-form">
+  <p>Enter category Details</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input matInput [(ngModel)]=" category.name">
+  </mat-form-field>
+  <mat-form-field  appearance="fill"><mat-label>Pattern:</mat-label>
+    <input matInput [(ngModel)]="category.patterns"></mat-form-field>
+  <mat-form-field  appearance="fill">
+    <mat-label>Tags:</mat-label>
+    <input matInput [(ngModel)]="category.tags">
+  </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="category" cdkFocusInitial (click)="saveCategory()">Save</button>
+</div>

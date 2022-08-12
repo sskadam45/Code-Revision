@@ -1,0 +1,13 @@
+.user-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /*don't forget prefixes*/
+  background-image: url("../assets/user-icon.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+
+.navbar{
+  padding: 0 0.5rem !important;
+}

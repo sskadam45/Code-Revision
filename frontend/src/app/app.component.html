@@ -1,0 +1,55 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="home">
+      <img width="45" class="pr-1" src="assets/images/favicon/dsa.jpg" alt="Back to School">
+       DSA
+    </a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="home">Home</a>
+      </li> -->
+      <li class="nav-item">
+        <a href="/feed" class="nav-link" *ngIf="isLoggedIn" routerLink="feed">Feed</a>
+      </li>
+      <li class="nav-item">
+        <a href="/category" class="nav-link"  routerLink="category">Topics</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" *ngIf="isLoggedIn" routerLink="classroom/1">Classroom Details</a>
+      </li> -->
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a class="nav-link" routerLink="mod">Moderator Board</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li> -->
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="profile">
+          <img *ngIf="imageUrl" src="{{ imageUrl }}" width="30" height="30" class="rounded-circle">
+          {{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

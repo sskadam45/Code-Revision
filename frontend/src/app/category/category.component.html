@@ -1,0 +1,26 @@
+
+<div class="mat-app-background basic-container">
+  <mat-accordion>
+    <mat-expansion-panel 
+      *ngFor="let item of categories; let i = index;"
+      (opened)="setOpened(i)"
+      (closed)="setClosed(i)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ item?.name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{item?.patterns}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="demo-button-container">
+        <button mat-raised-button (click)="openQuestionDialog(item.id)" class="demo-button">
+          Add Question
+        </button>
+       
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <br>
+  <button color="primary" (click)="openDialog()">Add Category</button>
+</div>

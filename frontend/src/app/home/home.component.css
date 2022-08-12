@@ -1,0 +1,97 @@
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+  }
+  
+  .carousel {
+    margin-bottom: 4rem;
+  }
+  .carousel-caption {
+    color: aliceblue;
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    /* left: 806px; */
+    font-family: cursive;
+    font-size: -webkit-xxx-large;
+  }
+  
+  .carousel-item {
+    height: 32rem;    
+    background-color: cornflowerblue;
+  }
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+  .marketing .row{
+    background-color: #d4e4f3;
+  }
+  .col-md-5{
+      padding-left: 0;
+      padding-right: 0;
+  }
+  .featurette-divider {
+    margin: 5rem 0; 
+  }
+  
+  .featurette-heading {
+    letter-spacing: -.05rem;
+  }
+  
+  .feature-col{
+      padding-top: 299px;
+  }
+  
+  .feature-header{
+      color: cornflowerblue;
+  }
+  
+  @media (min-width: 40em) {
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
+  
+  .img1{
+      top: -255px;
+      position: relative;
+      /* bottom: -100px;  */
+      width: 75%;
+  }
+  .img2{
+      top: -80px;
+      position: relative;
+      /* bottom: -100px;  */
+      width: 75%;
+  }
+  .img3{
+      top: -255px;
+      position: relative;
+      /* bottom: -100px;  */
+      width: 75%;
+  }
+
+  .jumbotron {
+    margin: 0;
+    padding: 0;
+  }
+  
+  

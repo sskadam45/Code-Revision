@@ -1,0 +1,15 @@
+mat-expansion-panel-header mat-panel-title{
+    font-size: larger;
+    font-weight: 600;
+}
+.demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }

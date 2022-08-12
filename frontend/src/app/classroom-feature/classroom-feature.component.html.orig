@@ -1,0 +1,118 @@
+
+  <div class="d-flex align-items-center jumbotron">
+    <h1 class="headerCls">Class Rooms</h1>
+    <div class="ml-auto createCls">
+      <a class="btn btn-primary" routerLink="../createClassroom"><i class="fa fa-plus"></i> Create</a>
+    </div>
+    <!-- <div class="joinCls">
+      <a class="btn btn-primary" routerLink="createClassroom"><i class="fa fa-sign-in"></i>&nbsp;Join&nbsp;</a>
+    </div> -->
+  </div>
+  <div class="classroom container-fluid">
+  <div class="nav flex-row nav-pills classroomTabs" id="h-pills-tab" role="tablist" aria-orientation="horizontal">
+    <a class="nav-link" [class.active]="selectedTab === 'InProgress'" id="v-pills-home-tab" data-toggle="pill" href role="tab" aria-controls="v-pills-home" aria-selected="true" routerLink="#" (click)="tabClicked('InProgress')">In Progress</a>
+    <a class="nav-link" [class.active]="selectedTab === 'ComingSoon'" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" routerLink="#" (click)="tabClicked('ComingSoon')">Coming Soon</a>
+    <a class="nav-link" [class.active]="selectedTab === 'Completed'" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" routerLink="#" (click)="tabClicked('Completed')">Completed</a>
+  </div>
+  <div class = "row createdClassroomCards" *ngIf="selectedTab === 'ComingSoon'">
+      <div class="col-sm-3 mb-3" *ngFor="let room of classroomsComingSoon">
+        <div class="card">
+          <img class="courseImg" src="{{room.imageUrl}}">
+<<<<<<< HEAD
+          <div class="card-body card-body-custom">
+            <div class="disc">
+              <h5 class="card-title">{{room.title}}</h5>
+              <p class="card-text">{{room.description}}</p>
+              <p><label  class="startDateLabel">Start Date:{{room.startDate}}</label></p>
+            </div>
+            <div class="tags-custom">
+              <label style="margin-right: 10px;">Tags:</label>
+              <div style="display: inline-block; margin-right: 5px;" *ngFor="let tag of room.tags">
+                <label class="skillTags">{{tag}}</label>
+              </div>
+=======
+          <div class="card-body">
+            <h5 class="card-title">{{room.title}}</h5>
+            <p class="card-text">{{room.description}}</p>
+            <p><label  class="startDateLabel">Start Date: {{room.startDate | date: 'longDate'}}</label></p>
+            <label style="margin-right: 10px;">Tags:</label>
+            <div style="display: inline-block; margin-right: 5px;" *ngFor="let tag of room.tags">
+              <label class="skillTags">{{tag}}</label>
+>>>>>>> 76fce2ca538bc881e30b25f325fdcce80cdffc1d
+            </div>
+            <div class="join-view-btn">
+              <p><a href="#" routerLink="../classroom/{{room.id}}" class="btn btn-info">View Classroom</a></p>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+  <div class = "row createdClassroomCards" *ngIf="selectedTab === 'InProgress'">
+    <div class="col-sm-3 mb-3" *ngFor="let room of classroomsInProgress">
+      <div class="card">
+        <img class="courseImg" src="{{room.imageUrl}}">
+        <div class="card-body">
+<<<<<<< HEAD
+          <div class="disc">
+            <h5 class="card-title">{{room.title}}</h5>
+            <p class="card-text">{{room.description}}</p>
+            <p><label class="startDateLabel">Start Date:{{room.startDate}}</label></p>
+          </div>
+            <div class="tags-custom">
+              <label style="margin-right: 10px;">Tags:</label>
+              <div style="display: inline-block; margin-right: 5px;" *ngFor="let tag of room.tags">
+                <label class="skillTags">{{tag}}</label>
+              </div>
+=======
+          <h5 class="card-title">{{room.title}}</h5>
+          <p class="card-text">{{room.description}}</p>
+          <p><label class="startDateLabel">Start Date: {{room.startDate | date: 'longDate'}}</label></p>
+          <label style="margin-right: 10px;">Tags:</label>
+          <div style="display: inline-block; margin-right: 5px;" *ngFor="let tag of room.tags">
+            <label class="skillTags">{{tag}}</label>
+>>>>>>> 76fce2ca538bc881e30b25f325fdcce80cdffc1d
+          </div>
+          <div class="join-view-btn">
+            <p><button *ngIf="isUserParticipant(room)" class="btn btn-success" (click)="onViewClassroom(room.id)">Enter Classroom</button></p>
+            <p><button *ngIf="!isUserParticipant(room)" [disabled]="disableJoinBtn" class="btn btn-primary" (click)="onJoinClassroom(room.id)">Join Classroom</button></p>
+            <p><button *ngIf="!isUserParticipant(room)" [disabled]="disableJoinBtn" class="btn btn-info" (click)="onViewClassroom(room.id)">View Classroom</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "row createdClassroomCards" *ngIf="selectedTab === 'Completed'">
+    <div class="col-sm-3 mb-3" *ngFor="let room of classroomsCompleted">
+      <div class="card">
+        <img class="courseImg" src="{{room.imageUrl}}">
+        <div class="card-body">
+<<<<<<< HEAD
+          <div class="disc">
+            <h5 class="card-title">{{room.title}}</h5>
+            <p class="card-text">{{room.description}}</p>
+            <p><label  class="startDateLabel">Start Date:{{room.startDate}}</label></p>
+          </div>
+          <div class="tags-custom">
+            <label style="margin-right: 10px;">Tags:</label>
+            <div style="display: inline-block; margin-right: 5px;" *ngFor="let tag of room.tags">
+              <label class="skillTags">{{tag}}</label>
+            </div>
+=======
+          <h5 class="card-title">{{room.title}}</h5>
+          <p class="card-text">{{room.description}}</p>
+          <p><label  class="startDateLabel">Start Date: {{room.startDate | date: 'longDate'}}</label></p>
+          <label style="margin-right: 10px;">Tags:</label>
+          <div style="display: inline-block; margin-right: 5px;" *ngFor="let tag of room.tags">
+            <label class="skillTags">{{tag}}</label>
+>>>>>>> 76fce2ca538bc881e30b25f325fdcce80cdffc1d
+          </div>
+          <div class="join-view-btn">
+            <p><a href="#" routerLink="../classroom/{{room.id}}" class="btn btn-info">View Classroom</a></p>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
